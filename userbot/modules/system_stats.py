@@ -123,7 +123,7 @@ async def pipcheck(pip):
 async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
     await on.edit("`"
-                     "Rizkyーデス \n"
+                     "Embi No Real \n"
                      "Bot Siap Boss! \n"
                      f"------------------------------------ \n"
                      f"⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕ \n"
@@ -145,7 +145,7 @@ async def amireallyalive(on):
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
                      f"Bio: {DEFAULTUSER} \n"
-		             f"Username: @AkameNFS \n"
+		             f"Username: @OnLy_Embi \n"
 f"Bot Tampan 😎 \n"
 		             f"------------------------------------ \n"
                      "`")
