@@ -19,16 +19,16 @@ from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "Stiker Siapa Nih? \n Gue Save Ah...",
+    "Sabar Tod hehe...",
+    "Menambahkan Ke Pack...",
+    "Menyimpan Stiker...",
+    "Dua Tiga Bebek Bakar!\nMemek Cina Mekar Mekar!..",
+    "Woi Ngentot Memek Cina\nKena Virus Corona Gak?.",
+    "Nih Pap TT (☉.☉)!→\nSambil Nunggu Ya Bujank...",
+    "Mantap Juga Nih Stiker\n Save Ah",
+    "Stiker Jelek Kayak Ginipun Gue Save...",
+    "Bot Ganteng Usernamenya Cuma @AkameNFS... ",
 ]
 
 
@@ -71,16 +71,16 @@ async def kang(args):
             is_anim = True
             photo = 1
         else:
-            await args.edit("`Unsupported File!`")
+            await args.edit("`File Tidak Didukung!`")
             return
     else:
-        await args.edit("`I can't kang that...`")
+        await args.edit("`Aku Tidak Bisa Menyimpannya...`")
         return
 
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "🤔"
+            emoji = "😋"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
@@ -180,7 +180,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
+                        "`Gagal Menambahkan Stiker, Gunakan` @Stickers `bot untuk Menambahkan Manual.`"
                     )
                     return
                 await conv.send_message(emoji)
@@ -192,7 +192,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Brewing a new Pack...`")
+            await args.edit("`Membuat Anak\n Maksudnya Pack Hehe...`")
             async with bot.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -237,7 +237,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(f"`Sticker kanged successfully!`\
-            \nPack can be found [here](t.me/addstickers/{packname})",
+            \nPack Milik @AkameNFS Klik [disini](t.me/addstickers/{packname})",
                         parse_mode='md')
 
 
@@ -269,24 +269,24 @@ async def resize_photo(photo):
 @register(outgoing=True, pattern="^.stkrinfo$")
 async def get_pack_info(event):
     if not event.is_reply:
-        await event.edit("`I can't fetch info from nothing, can I ?!`")
+        await event.edit("`Aku Tidak Mendapatkan Informasi!`")
         return
 
     rep_msg = await event.get_reply_message()
     if not rep_msg.document:
-        await event.edit("`Reply to a sticker to get the pack details`")
+        await event.edit("`Reply Stiker Untuk Mendapatkan Detail`")
         return
 
     try:
         stickerset_attr = rep_msg.document.attributes[1]
         await event.edit(
-            "`Fetching details of the sticker pack, please wait..`")
+            "`Membuat Detai Pack, Mohon Bersabar..`")
     except BaseException:
-        await event.edit("`This is not a sticker. Reply to a sticker.`")
+        await event.edit("`Ini Bukan Stiker. Reply Ke Stiker.`")
         return
 
     if not isinstance(stickerset_attr, DocumentAttributeSticker):
-        await event.edit("`This is not a sticker. Reply to a sticker.`")
+        await event.edit("`Ini Bukan Stiker. Reply Ke Stiker.`")
         return
 
     get_stickerset = await bot(
