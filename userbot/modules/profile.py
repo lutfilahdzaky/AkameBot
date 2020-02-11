@@ -27,16 +27,16 @@ from userbot import bot, CMD_HELP
 from userbot.events import register
 
 # ====================== CONSTANT ===============================
-INVALID_MEDIA = "```The extension of the media entity is invalid.```"
-PP_CHANGED = "```Profile picture changed successfully.```"
-PP_TOO_SMOL = "```This image is too small, use a bigger image.```"
-PP_ERROR = "```Failure occured while processing image.```"
+INVALID_MEDIA = "```Media Ini Tidak Cocok.```"
+PP_CHANGED = "```Foto Profil Berhasil Diganti.```"
+PP_TOO_SMOL = "```Gambarnya Terlalu Burik, Ganti Yang HD Dong.```"
+PP_ERROR = "```Gagal Ketika Memproses Foto.```"
 
-BIO_SUCCESS = "```Successfully edited Bio.```"
+BIO_SUCCESS = "```Sukses Mengedit Bio.```"
 
-NAME_OK = "```Your name was succesfully changed.```"
-USERNAME_SUCCESS = "```Your username was succesfully changed.```"
-USERNAME_TAKEN = "```This username is already taken.```"
+NAME_OK = "```Nama Kamu Berhasil Diganti.```"
+USERNAME_SUCCESS = "```Username Kamu Berhasil Diganti.```"
+USERNAME_TAKEN = "```Username Ini Telah Digunakan.```"
 # ===============================================================
 
 
@@ -123,7 +123,7 @@ async def count(event):
     bc = 0
     b = 0
     result = ""
-    await event.edit("`Processing..`")
+    await event.edit("`Sedang Diproses..`")
     dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
@@ -175,7 +175,7 @@ async def remove_profilepic(delpfp):
                        file_reference=sep.file_reference))
     await delpfp.client(DeletePhotosRequest(id=input_photos))
     await delpfp.edit(
-        f"`Successfully deleted {len(input_photos)} profile picture(s).`")
+        f"`Telah Berhasil Dihapus {len(input_photos)} Foto Profil.`")
 
 
 CMD_HELP.update({
