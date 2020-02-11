@@ -81,7 +81,7 @@ async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
-        await pip.edit("`Searching . . .`")
+        await pip.edit("`Mencari . . .`")
         invokepip = f"pip3 search {pipmodule}"
         pipc = await asyncrunapp(
             invokepip,
@@ -119,25 +119,36 @@ async def pipcheck(pip):
         await pip.edit("`Use .help pip to see an example`")
 
 
-@register(outgoing=True, pattern="^.alive$")
+@register(outgoing=True, pattern="^.on$")
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("`"
-                     "i am alive My Mastor \n\n"
-                     " \n\n"
-                     "botdo is alive \n\n"
+                     """ For .on command, check if the bot is running.  """
+    await on.edit("`"
+                     "Rizkyーデス \n"
+                     "Bot Siap Boss! \n"
+                     f"------------------------------------ \n"
+                     f"⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕ \n"
+					 f"⢐⢕⢕⢕⢕⢕⣕⢕⢕⠕⠁⢕⢕⢕⢕⢕⢕⢕⢕⠅⡄⢕⢕⢕⢕⢕⢕⢕⢕⢕ \n"
+					 f"⢕⢕⢕⢕⢕⠅⢗⢕⠕⣠⠄⣗⢕⢕⠕⢕⢕⢕⠕⢠⣿⠐⢕⢕⢕⠑⢕⢕⠵⢕ \n"
+					 f"⢕⢕⢕⢕⠁⢜⠕⢁⣴⣿⡇⢓⢕⢵⢐⢕⢕⠕⢁⣾⢿⣧⠑⢕⢕⠄⢑⢕⠅⢕ \n"
+					 f"⢕⢕⠵⢁⠔⢁⣤⣤⣶⣶⣶⡐⣕⢽⠐⢕⠕⣡⣾⣶⣶⣶⣤⡁⢓⢕⠄⢑⢅⢑ \n"
+ 					f"⠍⣧⠄⣶⣾⣿⣿⣿⣿⣿⣿⣷⣔⢕⢄⢡⣾⣿⣿⣿⣿⣿⣿⣿⣦⡑⢕⢤⠱⢐ \n"
+					 f"⢠⢕⠅⣾⣿⠋⢿⣿⣿⣿⠉⣿⣿⣷⣦⣶⣽⣿⣿⠈⣿⣿⣿⣿⠏⢹⣷⣷⡅⢐ \n"
+					 f"⣔⢕⢥⢻⣿⡀⠈⠛⠛⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⠛⠛⠁⠄⣼⣿⣿⡇⢔ \n"
+ 					f"⢕⢕⢽⢸⢟⢟⢖⢖⢤⣶⡟⢻⣿⡿⠻⣿⣿⡟⢀⣿⣦⢤⢤⢔⢞⢿⢿⣿⠁⢕ \n"
+ 					f"⢕⢕⠅⣐⢕⢕⢕⢕⢕⣿⣿⡄⠛⢀⣦⠈⠛⢁⣼⣿⢗⢕⢕⢕⢕⢕⢕⡏⣘⢕ \n"
+					 f"⢕⢕⠅⢓⣕⣕⣕⣕⣵⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣷⣕⢕⢕⢕⢕⡵⢀⢕⢕ \n"
+					 f"⢑⢕⠃⡈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢃⢕⢕⢕ \n"
+					 f"⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁ \n"
+                     f"⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿ \n"  
+                     f"------------------------------------ \n"
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
-                     f"Website: https://www.facebook.com/Teknoways \n"
-                     " \n\n"
-                     f"User: {DEFAULTUSER} \n"
-                     " \n\n"
-                     f"Maintainer: @Mayur_Karaniya \n"
-                     " \n\n"
-                     f"Admin: @Three_Cube_TeKnoways \n"
-                     " \n\n"
-                     f"Userbot: @testing_userbot "
+                     f"Bio: {DEFAULTUSER} \n"
+		             f"Username: @AkameNFS \n"
+		             f"------------------------------------ \n"
                      "`")    
 
 
@@ -151,7 +162,7 @@ async def amireallyaliveuser(username):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
-        output = 'Successfully changed user to ' + newuser + '!'
+        output = 'Sukses Mengganti Bio Menjadi ' + newuser + '!'
     await username.edit("`" f"{output}" "`")
 
 
@@ -160,7 +171,7 @@ async def amireallyalivereset(ureset):
     """ For .resetalive command, reset the username in the .alive command. """
     global DEFAULTUSER
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Successfully reset user for alive!" "`")
+    await ureset.edit("`" "Sukses Mereset On!" "`")
 
 
 CMD_HELP.update(
