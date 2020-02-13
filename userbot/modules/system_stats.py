@@ -141,11 +141,11 @@ async def amireallyalive(on):
 					 f"⣆⢕⠄⢱⣄⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢁⢕⢕⠕⢁ \n"
                      f"⣿⣦⡀⣿⣿⣷⣶⣬⣍⣛⣛⣛⡛⠿⠿⠿⠛⠛⢛⣛⣉⣭⣤⣂⢜⠕⢑⣡⣴⣿ \n"  
                      f"------------------------------------ \n"
-                     f"Telethon version: {version.__version__} \n"
+                     f"Versi Telethon: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
-                     f"Deskripsi: {DEFAULTUSER} \n"
-		             f"Username: @AkameNFS \n"
+                     f"Nama Lengkap: {DEFAULTUSER} \n"
+		             f"Creator Bot: @AkameNFS \n"
 		             f"------------------------------------ \n"
                      "`")    
 
