@@ -144,7 +144,7 @@ async def amireallyalive(on):
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
-                     f"Username: {DEFAULTUSER} \n"
+                     f"Full Name: {DEFAULTUSER} \n"
 		             f"Creator Bot: t.me/AkameNFS \n"
 		             f"------------------------------------ \n"
                      "`") 
