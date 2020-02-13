@@ -145,7 +145,7 @@ async def amireallyalive(on):
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
                      f"Bio: Bot Siap Digunakan Boss \n"
-		             f"Creator: t.me/AkameNFS \n"
+		             f"Creator Bot: t.me/AkameNFS \n"
 f"Bot Tampan 😎 \n"
 		             f"------------------------------------ \n"
                      "`")
