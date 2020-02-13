@@ -72,7 +72,7 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Shame that you don't have git, You're running 9.0 - 'Extended' anyway"
+            "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
         )
 
 
@@ -81,7 +81,7 @@ async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
-        await pip.edit("`Mencari . . .`")
+        await pip.edit("`Searching . . .`")
         invokepip = f"pip3 search {pipmodule}"
         pipc = await asyncrunapp(
             invokepip,
@@ -123,7 +123,7 @@ async def pipcheck(pip):
 async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
     await on.edit("`"
-                     "Hi Aku Asistenmu \n"
+                     "Rizkyーデス \n"
                      "Bot Siap Boss! \n"
                      f"------------------------------------ \n"
                      f"⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕ \n"
@@ -144,23 +144,23 @@ async def amireallyalive(on):
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
-                     f"Full Name: {DEFAULTUSER} \n"
-		             f"Creator Bot: t.me/AkameNFS \n"
+                     f"Deskripsi: {DEFAULTUSER} \n"
+		             f"Username: @AkameNFS \n"
 		             f"------------------------------------ \n"
-                     "`") 
+                     "`")    
 
 
 
-@register(outgoing=True, pattern="^.onu")
+@register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
-    """ For .onu command, change the username in the .onu command. """
+    """ For .aliveu command, change the username in the .alive command. """
     message = username.text
-    output = '.onu [new user without brackets] nor can it be empty'
-    if not (message == '.onu' or message[7:8] != ' '):
+    output = '.aliveu [new user without brackets] nor can it be empty'
+    if not (message == '.aliveu' or message[7:8] != ' '):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
-        output = 'Sukses Mengganti Bio Menjadi ' + newuser + '!'
+        output = 'Successfully changed user to ' + newuser + '!'
     await username.edit("`" f"{output}" "`")
 
 
@@ -169,7 +169,7 @@ async def amireallyalivereset(ureset):
     """ For .resetalive command, reset the username in the .alive command. """
     global DEFAULTUSER
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Sukses Mereset On!" "`")
+    await ureset.edit("`" "Sukses Mereset Alive!" "`")
 
 
 CMD_HELP.update(
