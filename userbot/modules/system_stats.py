@@ -123,7 +123,7 @@ async def pipcheck(pip):
 async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
     await on.edit("`"
-                     " {DEFAULTUSER} \n"
+                     "Hi Aku Asistenmu \n"
                      "Bot Siap Boss! \n"
                      f"------------------------------------ \n"
                      f"⡆⣐⢕⢕⢕⢕⢕⢕⢕⢕⠅⢗⢕⢕⢕⢕⢕⢕⢕⠕⠕⢕⢕⢕⢕⢕⢕⢕⢕⢕ \n"
@@ -144,20 +144,19 @@ async def amireallyalive(on):
                      f"Telethon version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
-                     f"Bio: Bot Siap Digunakan Boss \n"
+                     f"Username: {DEFAULTUSER} \n"
 		             f"Creator Bot: t.me/AkameNFS \n"
-f"Bot Tampan 😎 \n"
 		             f"------------------------------------ \n"
-                     "`")
+                     "`") 
 
 
 
-@register(outgoing=True, pattern="^.aliveu")
+@register(outgoing=True, pattern="^.onu")
 async def amireallyaliveuser(username):
-    """ For .aliveu command, change the username in the .alive command. """
+    """ For .onu command, change the username in the .onu command. """
     message = username.text
-    output = '.aliveu [new user without brackets] nor can it be empty'
-    if not (message == '.aliveu' or message[7:8] != ' '):
+    output = '.onu [new user without brackets] nor can it be empty'
+    if not (message == '.onu' or message[7:8] != ' '):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
