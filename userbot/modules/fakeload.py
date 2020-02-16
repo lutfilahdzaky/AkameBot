@@ -311,7 +311,7 @@ async def typewriter(typew):
 	sleep(0.03)
 	await typew.edit(str(number) + "%   ████████████████▌")
 	sleep(1)
-	await typew.edit("`Done! Now Get The Fuck Out!!`")
+	await typew.edit("`Cieeee Nungguin, Tertipu Kamu Bangsat!`")
 	# I did it for two hours :D just ctrl+c - crtl+v
 
 
