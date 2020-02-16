@@ -145,9 +145,9 @@ async def amireallyalive(on):
                      f"Python: {python_version()} \n"
                      f"------------------------------------ \n"
                      f"Info User \n"
-                     f"Nama Lengkap: {DEFAULTUSER} \n"
+                     f"Nama: {DEFAULTUSER} \n"
                      f"------------------------------------ \n"
-		             f"Creator Bot: t.me/AkameNFS \n"
+		             f"Creator: t.me/AkameNFS \n"
 		             f"------------------------------------ \n"
                      "`")    
 
@@ -162,7 +162,7 @@ async def amireallyaliveuser(username):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
-        output = 'Successfully changed user to ' + newuser + '!'
+        output = 'Sukses Mengganti Nama Menjadi ' + newuser + '!'
     await username.edit("`" f"{output}" "`")
 
 
