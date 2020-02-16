@@ -35,7 +35,7 @@ async def mention_afk(mention):
         if ISAFK:
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply(f"Aku AFK Sekarang\
+                    await mention.reply(f"Aku Sedang AFK\
                         \nKarena: `{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
@@ -44,7 +44,7 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply(f"Aku Masih AFK.\
+                        await mention.reply(f"Aku Sedang AFK\
                             \nKarena: `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -74,7 +74,7 @@ async def afk_on_pm(sender):
         if apprv and ISAFK:
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"Aku Sedang AFK Sekarang\
+                    await sender.reply(f"Aku Sedang AFK\
                     \nKarena: `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -83,7 +83,7 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"Aku Masih AFK.\
+                        await sender.reply(f"Aku Sedang AFK.\
                         \nKarena: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -103,12 +103,12 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit(f"Sedang AFK!\
+        await afk_e.edit(f"Telah AFK!\
         \nKarena: `{string}`")
     else:
-        await afk_e.edit("Sedang AFK!")
+        await afk_e.edit("Telah AFK!")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nTelah AFK!")
     ISAFK = True
     raise StopPropagation
 
