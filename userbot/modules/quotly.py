@@ -23,7 +23,7 @@ async def _(event):
     if reply_message.sender.bot:
        await event.edit("```Balas Ke Pesan Pengguna.```")
        return
-    await event.edit("```Membuat QuotLy```")
+    await event.edit("```Membuat Text Menjadi Stiker```")
     async with bot.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1031952739))
