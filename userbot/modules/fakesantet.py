@@ -321,6 +321,12 @@ async def typewriter(typew):
 	# Karyaku sendiri by @AkameNFS
 
 
+CMD_HELP.update({
+        "santet": 
+        ".santet \
+          \nKegunaan: Untuk Menyantet Korban, Tapi Ini Hanya Tipuan.\n"
+    })
+
 
 
 
