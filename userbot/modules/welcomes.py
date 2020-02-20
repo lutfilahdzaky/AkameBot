@@ -83,7 +83,7 @@ async def save_welcome(event):
     except AttributeError:
         await event.edit("`Running on Non-SQL mode!`")
         return
-    msg = await event.get_reply_message(1)
+    msg = await event.get_reply_message()
     string = event.pattern_match.group(1)
     msg_id = None
     if msg and msg.media and not string:
