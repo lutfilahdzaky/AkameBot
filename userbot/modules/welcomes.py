@@ -76,7 +76,7 @@ async def welcome_to_chat(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@register(outgoing=True, pattern=r"^.setwelcome(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.savewelcome(?: |$)(.*)")
 async def save_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import add_welcome_setting
