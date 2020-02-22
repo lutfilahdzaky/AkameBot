@@ -84,4 +84,9 @@ async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0
     response += f'__Took:__ {stop_time:.02f}s \n'
 
     await event.edit(response)
+CMD_HELP.stast({
+        "statistic": 
+        ".q \
+          \nUsage: Tampilkan Statistikkmu.\n"
+    })
 
