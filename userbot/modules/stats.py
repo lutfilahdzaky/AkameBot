@@ -85,12 +85,3 @@ async def stats(event: NewMessage.Event) -> None:  # pylint: disable = R0912, R0
 
     await event.edit(response)
 
-
-add_help_item(
-    "stats",
-    "Me",
-    "Get some basic Telegram stats about yourself.",
-    """
-    `.stats`
-    """
-)
