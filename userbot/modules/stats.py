@@ -1,12 +1,12 @@
 import time
 
-from telethon.events import NewMessage
-from telethon.tl.custom import Dialog
-from telethon.tl.types import Channel, User, Chat
+from telethon events import NewMessage
+from telethon tl.custom import Dialog
+from telethon tl.types import Channel, User, Chat
 
-from CMD_HELP
-from userbot.utils import inline_mention
-from userbot.events import register
+from userbot import CMD_HELP
+from userbot utils import inline_mention
+from userbot events import register
 
 
 @register(outgoing=True, pattern=f'^.stats')
