@@ -4,7 +4,7 @@ from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, User, Chat
 
-from ..help import add_help_item
+from CMD_HELP
 from userbot.utils import inline_mention
 from userbot.events import register
 
