@@ -12,7 +12,7 @@ async def typewriter(typew):
 	await typew.edit("`Ucap Salam Goblok...`")
 	sleep(1)
 	await typew.edit("`Assalamualaikum`")
-
+# Create by myself @AkameNFS
 
 
 
