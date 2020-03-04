@@ -37,9 +37,9 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@register(outgoing=True, pattern="^.addfilter (\w*)")
+@register(outgoing=True, pattern="^.filter (\w*)")
 async def add_new_filter(new_handler):
-    """ For .addfilter command, allows adding new filters in a chat """
+    """ For .filter command, allows adding new filters in a chat """
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
