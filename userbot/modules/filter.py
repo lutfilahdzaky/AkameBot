@@ -37,9 +37,9 @@ async def filter_incoming_handler(handler):
         pass
 
 
-@register(outgoing=True, pattern="^.filter (\w*)")
+@register(outgoing=True, pattern="^.addfilter (\w*)")
 async def add_new_filter(new_handler):
-    """ For .filter command, allows adding new filters in a chat """
+    """ For .addfilter command, allows adding new filters in a chat """
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
@@ -145,7 +145,7 @@ CMD_HELP.update({
     "filter":
     ".filters\
     \nUsage: Lists all active userbot filters in a chat.\
-    \n\n.filter <keyword> <reply text> or reply to a message with .filter <keyword>\
+    \n\n.addfilter <keyword> <reply text> or reply to a message with .filter <keyword>\
     \nUsage: Saves the replied message as a reply to the 'keyword'.\
     \nThe bot will reply to the message whenever 'keyword' is mentioned.\
     \nWorks with everything from files to stickers.\
