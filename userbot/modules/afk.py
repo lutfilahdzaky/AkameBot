@@ -74,7 +74,7 @@ async def afk_on_pm(sender):
         if apprv and ISAFK:
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply(f"Aku Sedang AFK\
+                    await sender.reply(f"Saya Sedang AFK\
                     \nKarena: `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -83,7 +83,7 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply(f"Aku Sedang AFK.\
+                        await sender.reply(f"Saya Sedang AFK.\
                         \nKarena: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -103,12 +103,12 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit(f"Telah AFK!\
+        await afk_e.edit(f"Saya Sedang AFK!\
         \nKarena: `{string}`")
     else:
-        await afk_e.edit("Telah AFK!")
+        await afk_e.edit("Saya Sedang AFK!")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nTelah AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nSedang AFK!")
     ISAFK = True
     raise StopPropagation
 
@@ -122,7 +122,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        await notafk.respond("Tidak AFK Lagi")
+        await notafk.respond("Saya Sudah Tidak AFK")
         await sleep(2)
         if BOTLOG:
             await notafk.client.send_message(
