@@ -5,13 +5,13 @@
 #
 # Port to UserBot by @MoveAngel
 
-from covid import Covid
+from covid import covid
 from userbot import CMD_HELP
 from userbot.events import register
 
 @register(outgoing=True, pattern="^.covid(?: |$)(.*)")
 async def corona(event):
-    covid = Covid()
+    covid = covid()
     data = covid.get_data()
     country = event.pattern_match.group(1)
     country_data = get_country_data(country, data)
