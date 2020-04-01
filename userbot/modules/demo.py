@@ -86,7 +86,7 @@ async def afk_on_pm(sender):
                     COUNT_MSG = COUNT_MSG + 1
 
 
-@register(outgoing=True, pattern="^.demos(?: |$)(.*)", disable_errors=True)
+@register(outgoing=True, pattern="^.demo(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text
@@ -100,6 +100,6 @@ async def set_afk(afk_e):
     else:
         await afk_e.edit("Demo Berjalan!")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "Demo Sedang Berjalan!")
     ISAFK = True
     raise StopPropagation
