@@ -126,8 +126,11 @@ async def amireallyalive(on):
                      "Hi Master \n"
                      "Bot Telah Aktif! \n"
                      f"`------------------------------------ `\n"
-                     f"`    أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللهُ `\n"
-                     f"`    وَ أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللهِ `\n"
+                     f"`⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤`\n"
+                     f"`⟥⟤⟥⟤⟥⟤⟥⟤`\n"
+                     f"`⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤`\n"
+                     f"`⟥⟤⟥⟤⟥⟤⟥⟤`\n"
+                     f"`⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤⟥⟤`\n"
                      f"`------------------------------------ `\n"
                      f"Versi Telethon:` {version.__version__} `\n"
                      f"Python:` {python_version()} `\n"
@@ -135,8 +138,8 @@ async def amireallyalive(on):
                      f"`Info User: `\n"
                      f"Nama:` {DEFAULTUSER} `\n"
                      f"`------------------------------------ `\n"
-		             f"Creator: [NFS乛Rizky戈手](https://t.me/AkameNFS) \n"
-		             f"`------------------------------------ `\n"
+		     f"Creator: [NFS乛Rizky戈手](https://t.me/AkameNFS) \n"
+		     f"`------------------------------------ `\n"
                      " ")    
 
 
