@@ -127,7 +127,7 @@ async def upstream(ups):
         await ups.edit(
             'Silahkan Tunggu....')
     else:
-        await ups.edit('Bot Updated by **[NFS乛Rizky戈手](https://t.me/AkameNFS)**')
+        await ups.edit('Bot Updated by **NFS乛Rizky戈手**')
     # We're in a Heroku Dyno, handle it's memez.
     if HEROKU_APIKEY is not None:
         import heroku3
