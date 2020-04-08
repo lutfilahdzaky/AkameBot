@@ -88,10 +88,10 @@ async def remove_a_filter(r_handler):
         return
     filt = r_handler.pattern_match.group(1)
     if not remove_filter(r_handler.chat_id, filt):
-        await r_handler.edit("`Filter` **{}** `doesn't exist.`".format(filt))
+        await r_handler.edit("Filter **{}** Tidak Tersedia".format(filt))
     else:
         await r_handler.edit(
-            "`Filter` **{}** `was deleted successfully`".format(filt))
+            "Filter **{}** Telah Berhasil Dihapus".format(filt))
 
 
 @register(outgoing=True, pattern="^.rmbotfilters (.*)")
@@ -132,8 +132,8 @@ async def filters_active(event):
     transact = "`There are no filters in this chat.`"
     filters = get_filters(event.chat_id)
     for filt in filters:
-        if transact == "`There are no filters in this chat.`":
-            transact = "Active filters in this chat:\n"
+        if transact == "Belum Ada Filter Yang Ditambahkan Di Grup Ini":
+            transact = "Daftar Filter Yang Ada Di Grup Ini:\n"
             transact += "`{}`\n".format(filt.keyword)
         else:
             transact += "`{}`\n".format(filt.keyword)
