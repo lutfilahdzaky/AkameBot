@@ -168,7 +168,7 @@ async def upstream(ups):
             await ups.edit(f'{txt}\n`Here is the error log:\n{error}`')
             repo.__del__()
             return
-        await ups.edit('`Successfully Updated!\n'
+        await ups.edit('`Berhasil Diperbarui!\n'
                        'Restarting, please wait...`')
     else:
         # Classic Updater, pretty straightforward.
@@ -177,8 +177,8 @@ async def upstream(ups):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         reqs_upgrade = await update_requirements()
-        await ups.edit('`Successfully Updated!\n'
-                       'Bot is restarting... Wait for a second!`')
+        await ups.edit('Berhasil Diperbarui!\n'
+                       'Bot Sedang Direstart... Tunggu Beberapa Detik')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
