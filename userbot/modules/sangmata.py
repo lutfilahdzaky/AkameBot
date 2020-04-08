@@ -13,16 +13,16 @@ async def _(event):
     if event.fwd_from:
         return 
     if not event.reply_to_msg_id:
-       await event.edit("`Reply to any user message.`")
+       await event.edit("Balas Ke Pesan Siapapun")
        return
     reply_message = await event.get_reply_message() 
     if not reply_message.text:
-       await event.edit("```reply to text message```")
+       await event.edit("Balas Ke Pesan Siapapun")
        return
     chat = "@SangMataInfo_bot"
     sender = reply_message.sender
     if reply_message.sender.bot:
-       await event.edit("`Reply to actual users message.`")
+       await event.edit("Balas Ke Pesan Pengguna")
        return
     await event.edit("`Processing`")
     async with bot.conversation(chat) as conv:
