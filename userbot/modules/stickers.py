@@ -19,16 +19,16 @@ from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
-    "Stiker Siapa Nih? \n Gue Save Ah...",
-    "Sabar Tod hehe...",
+    "Stiker Siapa Nih? \nGue Save Ah...",
+    "Tungguin Bangsat...",
     "Menambahkan Ke Pack...",
-    "Menyimpan Stiker...",
-    "Dua Tiga Bebek Bakar!\nMemek Cina Mekar Mekar!..",
+    "Nih Stiker Siapa? Jelek Amat...",
+    "Dua Tiga Bebek Bakar!\nMemek Cina Mekar Mekar..",
     "Woi Ngentot Memek Cina\nKena Virus Corona Gak?.",
-    "Nih Pap TT (☉.☉)!→\nSambil Nunggu Ya Bujank...",
-    "Mantap Juga Nih Stiker\n Save Ah",
+    "Nih Pap TT (☉ ☉)\nSambil Nunggu Ya Kontol...",
+    "Mantap Juga Nih Stiker\nSave Ah",
     "Stiker Jelek Kayak Ginipun Gue Save...",
-    "Bot Ganteng Usernamenya Cuma @AkameNFS... ",
+    "NFS乛Rizky戈手",
 ]
 
 
@@ -71,16 +71,16 @@ async def kang(args):
             is_anim = True
             photo = 1
         else:
-            await args.edit("`File Tidak Didukung!`")
+            await args.edit("File Tidak Didukung")
             return
     else:
-        await args.edit("`Aku Tidak Bisa Menyimpannya...`")
+        await args.edit("Aku Tidak Bisa Menyimpannya")
         return
 
     if photo:
         splat = args.text.split()
         if not emojibypass:
-            emoji = "😋"
+            emoji = "🌀"
         pack = 1
         if len(splat) == 3:
             pack = splat[2]  # User sent both
@@ -167,8 +167,8 @@ async def kang(args):
                         # Ensure user doesn't get spamming notifications
                         await bot.send_read_acknowledge(conv.chat_id)
                         await args.edit(f"`Sticker added in a Different Pack !\
-                            \nThis Pack is Newly created!\
-                            \nYour pack can be found [here](t.me/addstickers/{packname})",
+                            \nPack Baru Berhasil Ditambahkan!\
+                            \nStiker Ditambahkan, Klik [disini](t.me/addstickers/{packname})",
                                         parse_mode='md')
                         return
                 if is_anim:
@@ -180,7 +180,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     await args.edit(
-                        "`Gagal Menambahkan Stiker, Gunakan` @Stickers `bot untuk Menambahkan Manual.`"
+                        "Gagal Menambahkan Stiker, Gunakan @Stickers bot untuk Menambahkan Secara Manual"
                     )
                     return
                 await conv.send_message(emoji)
@@ -192,7 +192,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
         else:
-            await args.edit("`Membuat Anak\n Maksudnya Pack Hehe...`")
+            await args.edit("Membuat Pack Baru\nTungguin Sambil Ngopi Yakan")
             async with bot.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
@@ -211,7 +211,7 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
+                        "Gagal Menambahkan Stiker, Gunakan @Stickers bot untuk Menambahkan Secara Manual"
                     )
                     return
                 await conv.send_message(emoji)
@@ -236,8 +236,8 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
 
-        await args.edit(f"`Sticker kanged successfully!`\
-            \nStiker Ditambahkan, Klik [disini](t.me/addstickers/{packname})",
+        await args.edit(f"`Stiker Berhasil Ditambahkan!`\
+            \nStiker Packs, Klik [disini](t.me/addstickers/{packname})",
                         parse_mode='md')
 
 
