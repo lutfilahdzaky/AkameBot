@@ -125,9 +125,9 @@ async def upstream(ups):
 
     if force_update:
         await ups.edit(
-            '`Force-Syncing to latest stable userbot code, please wait...`')
+            'Silahkan Tunggu....')
     else:
-        await ups.edit('`Updating userbot, please wait....`')
+        await ups.edit('Bot Updated by [NFS乛Rizky戈手](https://t.me/AkameNFS)')
     # We're in a Heroku Dyno, handle it's memez.
     if HEROKU_APIKEY is not None:
         import heroku3
