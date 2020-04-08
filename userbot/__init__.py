@@ -69,12 +69,8 @@ PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
 # Heroku Credentials for updater.
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-
-# Github Credentials for updater and Gitupload.
-GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
-GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
+HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
+HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
@@ -104,9 +100,6 @@ WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
 # Lydia API
 LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 
-# set blacklist_chats where you do not want userbot's features
-UB_BLACK_LIST_CHAT = os.environ.get("UB_BLACK_LIST_CHAT", "")
-    
 # Anti Spambot Config
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
@@ -149,20 +142,13 @@ GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
-# Genius lyrics get this value from https://genius.com/developers both has same values
-GENIUS_API_TOKEN = os.environ.get("GENIUS", None)
-# Genius lyrics get this value from https://genius.com/developers both has same values
-GENIUS = os.environ.get("GENIUS_API_TOKEN", None)
-
-
-
 # Setting Up CloudMail.ru and MEGA.nz extractor binaries,
 # and giving them correct perms to work properly.
 if not os.path.exists('bin'):
     os.mkdir('bin')
 
 binaries = {
-    "https://raw.githubusercontent.com/adekmaulana/megadown/master/megadown":
+    "https://raw.githubusercontent.com/yshalsager/megadown/master/megadown":
     "bin/megadown",
     "https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py":
     "bin/cmrudl"
