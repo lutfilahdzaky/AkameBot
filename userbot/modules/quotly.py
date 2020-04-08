@@ -23,14 +23,14 @@ async def _(event):
     if reply_message.sender.bot:
        await event.edit("Balas Ke Pesan Pengguna.")
        return
-    await event.edit("Membuat Text Menjadi Stiker")
+    await event.edit("Membuat Text Menjadi Stiker\n**NFS乛Rizky戈手**")
     async with bot.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=1031952739))
               await bot.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("Tolong unblock @QuotLyBot dan coba lagi")
+              await event.reply("Tolong Unblock @QuotLyBot Dan Coba Lagi")
               return
           if response.text.startswith("Hi!"):
              await event.edit("Bisakah Kamu Meminta Kepada Admin Untuk Mengizinkan Foward?")
