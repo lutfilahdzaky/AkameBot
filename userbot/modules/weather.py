@@ -20,7 +20,7 @@ from userbot.events import register
 if WEATHER_DEFCITY:
     DEFCITY = WEATHER_DEFCITY
 else:
-    DEFCITY = None
+    DEFCITY = Pinrang
 # ====================
 
 
@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "`Get an API key from` https://openweathermap.org/ `first.`")
+            "Dapatkan API Key Di https://openweathermap.org/ ")
         return
 
     APPID = OWM_API
@@ -52,7 +52,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "`Masukkan Kota Default Di WEATHER_DEFCITY Pada Config Variable.`"
             )
             return
     else:
@@ -72,7 +72,7 @@ async def get_weather(weather):
             try:
                 countrycode = timezone_countries[f'{country}']
             except KeyError:
-                await weather.edit("`Invalid country.`")
+                await weather.edit("`Negara Tidak Valid`")
                 return
             CITY = newcity[0].strip() + "," + countrycode.strip()
 
@@ -81,7 +81,7 @@ async def get_weather(weather):
     result = json.loads(request.text)
 
     if request.status_code != 200:
-        await weather.edit(f"`Invalid country.`")
+        await weather.edit(f"`Negara Tidak Valid`")
         return
 
     cityname = result['name']
