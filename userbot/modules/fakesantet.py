@@ -8,11 +8,11 @@ from userbot.events import register
 @register(outgoing=True, pattern='^.santet(?: |$)(.*)')
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
-	await typew.edit("`Sedang Menyantet Korban...\nMampus Kau Anjeng!`")
+	await typew.edit("Sedang Menyantet Korban...\nMampus Kau Anjeng!")
 	sleep(5)
-	await typew.edit("`Sedang Mencari Informasi Korban...\n50%!`")
+	await typew.edit("Sedang Mencari Informasi Korban...")
 	sleep(5)
-	await typew.edit("`Informasi Ditemukan...\nMengirim Santet Diproses!`")
+	await typew.edit("Informasi Ditemukan...\nMengirim Santet Diproses!")
 	sleep(5)
 	await typew.edit("0%")
 	number = 1
@@ -315,9 +315,9 @@ async def typewriter(typew):
 	sleep(0.03)
 	await typew.edit(str(number) + "%   ████████████████▌")
 	sleep(1)
-	await typew.edit("`Korban Berhasil Disantet!`")
+	await typew.edit("Korban Berhasil Disantet")
 	sleep(5)
-	await typew.edit("`Tapi Boong, Hiyak Hiyak Hiyak!`")
+	await typew.edit("Tapi Boong, Hiyak Hiyak Hiyak!")
 	# Karyaku sendiri by @AkameNFS
 
 
