@@ -20,7 +20,7 @@ from userbot.events import register
 if WEATHER_DEFCITY:
     DEFCITY = WEATHER_DEFCITY
 else:
-    DEFCITY = Pinrang
+    DEFCITY = None
 # ====================
 
 
