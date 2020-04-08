@@ -52,7 +52,7 @@ async def add_new_filter(new_handler):
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await new_handler.client.send_message(
-                BOTLOG_CHATID, f"#FILTER\
+                BOTLOG_CHATID, f"#FILTER_BARU\
             \nID Grup: {new_handler.chat_id}\
             \nKata Kunci: {keyword}\
             \n\nJangan Dihapus Karena Filtermu Akan Hilang"
