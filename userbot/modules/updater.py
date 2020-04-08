@@ -101,7 +101,7 @@ async def upstream(ups):
 
     if not changelog and not force_update:
         await ups.edit(
-            f'\nBOT Kamu Telah  **Terupdate**  Dengan  **{ac_br}**\n')
+            f'\nBOT Kamu Telah  **Terupdate**  Dengan  **{ac_br}**\nCreator: [NFS乛Rizky戈手](https://t.me/AkameNFS)')
         repo.__del__()
         return
 
