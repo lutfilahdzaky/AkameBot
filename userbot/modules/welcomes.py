@@ -76,7 +76,7 @@ async def welcome_to_chat(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@register(outgoing=True, pattern=r"^.savewelcome(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^.setwelcome(?: |$)(.*)")
 async def save_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import add_welcome_setting
@@ -90,8 +90,8 @@ async def save_welcome(event):
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID, f"#WELCOME_NOTE\
-            \nCHAT ID: {event.chat_id}\
-            \nThe following message is saved as the new welcome note for the chat, please do NOT delete it !!"
+            \nGrup ID: {event.chat_id}\
+            \nPesan Welcome Disimpan, Tolong Jangan Dihapus !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -101,13 +101,13 @@ async def save_welcome(event):
             msg_id = msg_o.id
         else:
             await event.edit(
-                "`Saving media as part of the welcome note requires the BOTLOG_CHATID to be set.`"
+                "Untuk Menyimpan Media Silahkan Aktifkan BOT_LOG Dengan Value True"
             )
             return
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Welcome note {} for this chat.`"
+    success = "Catatan Selamat Datang {} Untuk Grup Ini"
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
         await event.edit(success.format('saved'))
     else:
@@ -123,17 +123,17 @@ async def show_welcome(event):
         return
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
-        await event.edit("`No welcome message saved here.`")
+        await event.edit("Tidak Ada Welcome Yang Disimpan Disini")
         return
     elif cws and cws.f_mesg_id:
         msg_o = await event.client.get_messages(entity=BOTLOG_CHATID,
                                                 ids=int(cws.f_mesg_id))
         await event.edit(
-            "`I am currently welcoming new users with this welcome note.`")
+            "Aku Akan Menyambut Orang Baru Disini Dengan Sambutan Ini")
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws and cws.reply:
         await event.edit(
-            "`I am currently welcoming new users with this welcome note.`")
+            "Aku Akan Menyambut Orang Baru Disini Dengan Sambutan Ini")
         await event.reply(cws.reply)
 
 
@@ -145,9 +145,9 @@ async def del_welcome(event):
         await event.edit("`Running on Non-SQL mode!`")
         return
     if rm_welcome_setting(event.chat_id) is True:
-        await event.edit("`Welcome note deleted for this chat.`")
+        await event.edit("Pesan Welcome Telah Dihapuskan")
     else:
-        await event.edit("`Do I have a welcome note here ?`")
+        await event.edit("Sejak Kapan Saya Mempunyai Sambutan Disini?")
 
 
 CMD_HELP.update({
