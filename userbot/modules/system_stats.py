@@ -136,7 +136,7 @@ async def amireallyalive(on):
                      f"Python:` {python_version()} `\n"
                      f"`------------------------------------ `\n"
                      f"`Info User: `\n"
-                     f"Nama:` {DEFAULTUSER} `\n"
+                     f"Nama: {DEFAULTUSER} \n"
                      f"`------------------------------------ `\n"
 		     f"Creator: [NFS乛Rizky戈手](https://t.me/AkameNFS) \n"
 		     f"`------------------------------------ `\n"
