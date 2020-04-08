@@ -14,8 +14,13 @@ import os
 import io
 import sys
 import json
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot, GIT_REPO_NAME, ALIVE_NAME
 from userbot.events import register
+
+
+# ================= CONSTANT =================
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
+# ============================================
 
 
 @register(outgoing=True, pattern="^.random")
@@ -54,7 +59,7 @@ async def sleepybot(time):
 @register(outgoing=True, pattern="^.shutdown$")
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
-    await event.edit("AkameBot Telah Di Nonaktifkan")
+    await event.edit("`Goodbye *Windows XP shutdown sound*....`")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
                                         "Bot shut down")
@@ -66,7 +71,7 @@ async def killdabot(event):
     await event.edit("`*i would be back in a moment*`")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n"
-                                        "Bot Telah Direstart")
+                                        "Bot Restarted")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -78,9 +83,9 @@ async def killdabot(event):
 async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
-        "Join Ke Channel Saya @NotFakeSquadChannel"
-        "\nButuh Akun Untuk Ngecheat? \nJoin @NFS_AkunStore "
-        "\nNot Fake Squad")
+        "Join RaphielGang's awesome userbot community: @userbot_support"
+        "\nDo note that Paperplane Extended is an unoficial fork of their "
+        "Paperplane project and it may get limited or no support for bugs.")
 
 
 @register(outgoing=True, pattern="^.support$")
@@ -96,11 +101,16 @@ async def creator(e):
     await e.edit("Creator: [NFS乛Rizky戈手](https://t.me/AkameNFS)")
 
 
+@register(outgoing=True, pattern="^.creator$")
+async def creator(e):
+    await e.edit("[TeKnoways](https://t.me/Three_Cube_TeKnoways)")
+
+
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
         "Here's something for you to read:\n"
-        "\n[OpenUserBot's README.md file](https://github.com/RizkyNFS/AkameBot/blob/sql-extended/README.md)"
+        "\n[OpenUserBot's README.md file](https://github.com/mkaraniya/OpenUserBot/blob/sql-extended/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
@@ -128,9 +138,16 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "Klik [disini](https://github.com/RizkyNFS/AkameBot) Untuk Membuka OpenUserBot Halaman GitHub."
+        "Click [here](https://github.com/mkaraniya/OpenUserBot) to open OpenUserBot's GitHub page."
     )
 
+    
+@register(outgoing=True, pattern="^.myrepo$")
+async def myrepo_is_here(wannaseeme):
+    """ For .myrepo command, just returns the repo URL. """
+    await wannaseeme.edit(
+        f'Click [here](https://github.com/{GIT_REPO_NAME}/tree/sql-extended/) to open {DEFAULTUSER}`s GitHub page'
+    )
 
 @register(outgoing=True, pattern="^.raw$")
 async def raw(event):
@@ -189,6 +206,12 @@ CMD_HELP.update({
     'repo':
     '.repo\
 \nUsage: If you are curious what makes the userbot work, this is what you need.'
+})
+
+CMD_HELP.update({
+    'myrepo':
+    '.myrepo\
+\nUsage: If you are curious which is your personal repo, this is what you have.'
 })
 
 CMD_HELP.update({
