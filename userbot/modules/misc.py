@@ -54,7 +54,7 @@ async def sleepybot(time):
 @register(outgoing=True, pattern="^.shutdown$")
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
-    await event.edit("`Goodbye *Windows XP shutdown sound*....`")
+    await event.edit("AkameBot Telah Di Nonaktifkan")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#SHUTDOWN \n"
                                         "Bot shut down")
@@ -66,7 +66,7 @@ async def killdabot(event):
     await event.edit("`*i would be back in a moment*`")
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n"
-                                        "Bot Restarted")
+                                        "Bot Telah Direstart")
     await bot.disconnect()
     # Spin a new instance of bot
     execl(sys.executable, sys.executable, *sys.argv)
@@ -78,29 +78,29 @@ async def killdabot(event):
 async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
-        "Join RaphielGang's awesome userbot community: @userbot_support"
-        "\nDo note that Paperplane Extended is an unoficial fork of their "
-        "Paperplane project and it may get limited or no support for bugs.")
+        "Join Ke Channel Saya @NotFakeSquadChannel"
+        "\nButuh Akun Untuk Ngecheat? Join @NFS_AkunStore "
+        "Not Fake Squad")
 
 
 @register(outgoing=True, pattern="^.support$")
 async def bot_support(wannahelp):
     """ For .support command, just returns the group link. """
     await wannahelp.edit(
-        "Join the OpenUserBot Channel: @PaperPlaneExtended_news \
-        \nJoin the OpenUserBot Chat: @PPE_Support")
+        "Join Ke Channelku: @NotFakeSquadChannel \
+        \nJoin Ke Grup Chat: @NotFakeSquadGrup")
 
 
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
-    await e.edit("[Rizkyーデス](https://t.me/AkameNFS)")
+    await e.edit("[NFS乛Rizky戈手](https://t.me/AkameNFS)")
 
 
 @register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     await e.edit(
         "Here's something for you to read:\n"
-        "\n[OpenUserBot's README.md file](https://github.com/mkaraniya/OpenUserBot/blob/sql-extended/README.md)"
+        "\n[OpenUserBot's README.md file](https://github.com/RizkyNFS/AkameBot/blob/sql-extended/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
