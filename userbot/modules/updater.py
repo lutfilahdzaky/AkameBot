@@ -101,7 +101,7 @@ async def upstream(ups):
 
     if not changelog and not force_update:
         await ups.edit(
-            f'\n`Your BOT is`  **up-to-date**  `with`  **{ac_br}**\n')
+            f'\nBOT Kamu Telah  **Yang Terbaru**  Dengan  **{ac_br}**\n')
         repo.__del__()
         return
 
@@ -120,7 +120,7 @@ async def upstream(ups):
             remove("output.txt")
         else:
             await ups.edit(changelog_str)
-        await ups.respond('`do \".update now\" to update`')
+        await ups.respond('Ketik \".update now\" Untuk Memperbarui')
         return
 
     if force_update:
