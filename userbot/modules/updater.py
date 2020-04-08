@@ -178,7 +178,7 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         reqs_upgrade = await update_requirements()
         await ups.edit('Berhasil Diperbarui!\n'
-                       'Bot Sedang Direstart... Tunggu Beberapa Detik')
+                       'Bot Sedang Direstart... Tunggu Beberapa Detik\nCreator: [NFS乛Rizky戈手](https://t.me/AkameNFS)')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
