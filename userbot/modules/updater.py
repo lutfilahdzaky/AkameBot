@@ -101,7 +101,7 @@ async def upstream(ups):
 
     if not changelog and not force_update:
         await ups.edit(
-            f'\nBOT Kamu Telah  **Terupdate**  Dengan  **{ac_br}**\n**Creator: [NFS乛Rizky戈手](https://t.me/AkameNFS)**')
+            f'\nBOT Kamu Telah  **Terupdate**  Dengan  **{ac_br}**\n****Creator:** [NFS乛Rizky戈手](https://t.me/AkameNFS)**')
         repo.__del__()
         return
 
@@ -178,7 +178,7 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         reqs_upgrade = await update_requirements()
         await ups.edit('Berhasil Diperbarui!\n'
-                       'Bot Sedang Direstart... Tunggu Beberapa Detik\nCreator: **[NFS乛Rizky戈手](https://t.me/AkameNFS)**')
+                       'Bot Sedang Direstart... Tunggu Beberapa Detik\n**Creator:** **[NFS乛Rizky戈手](https://t.me/AkameNFS)**')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
