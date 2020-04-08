@@ -16,304 +16,304 @@ async def typewriter(typew):
 	sleep(5)
 	await typew.edit("0%")
 	number = 1
-	await typew.edit(str(number) + "%\nProses Santet...\n   ▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █")
+	await typew.edit(str(number) + "%\nProses Santet...\n█")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n█▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n█▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n█▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n█▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n█▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██")
+	await typew.edit(str(number) + "%\nProses Santet...\n██")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n██▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n██▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n██▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n██▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n██▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███")
+	await typew.edit(str(number) + "%\nProses Santet...\n███")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n███▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n███▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n███▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n███▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n███▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████")
+	await typew.edit(str(number) + "%\nProses Santet...\n████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   █████████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n█████████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ██████████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n██████████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████▊")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████▊")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ███████████████▉")
+	await typew.edit(str(number) + "%\nProses Santet...\n███████████████▉")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████████")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████████")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████████▎")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████████▎")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████████▍")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████████▍")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████████▌")
 	number = number+ 1
 	sleep(0.03)
-	await typew.edit(str(number) + "%\nProses Santet...\n   ████████████████▌")
+	await typew.edit(str(number) + "%\nProses Santet...\n████████████████▌")
 	sleep(1)
 	await typew.edit("Korban Berhasil Disantet")
 	sleep(5)
@@ -322,10 +322,10 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-        "santet": 
-        ".santet \
-          \nKegunaan: Untuk Menyantet Korban, Tapi Ini Hanya Tipuan.\n"
-    })
+  "santet": 
+  ".santet \
+ \nKegunaan: Untuk Menyantet Korban, Tapi Ini Hanya Tipuan.\n"
+ })
 
 
 
