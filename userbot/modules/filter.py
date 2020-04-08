@@ -129,7 +129,7 @@ async def filters_active(event):
     except AttributeError:
         await event.edit("`Running on Non-SQL mode!`")
         return
-    transact = "`There are no filters in this chat.`"
+    transact = "Belum Ada Filter Yang Ditambahkan Di Grup Ini"
     filters = get_filters(event.chat_id)
     for filt in filters:
         if transact == "Belum Ada Filter Yang Ditambahkan Di Grup Ini":
