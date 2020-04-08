@@ -123,8 +123,8 @@ async def type_afk_is_not_true(notafk):
         if BOTLOG:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "You've recieved " + str(COUNT_MSG) + " messages from " +
-                str(len(USERS)) + " chats while you were away",
+                "Kamu Telah Menerima " + str(COUNT_MSG) + " Pesan Dari " +
+                str(len(USERS)) + " Saat Kamu AFK",
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
@@ -132,7 +132,7 @@ async def type_afk_is_not_true(notafk):
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
                     "[" + name0 + "](tg://user?id=" + str(i) + ")" +
-                    " sent you " + "`" + str(USERS[i]) + " messages`",
+                    " Mengirimkanmu " + "" + str(USERS[i]) + " Pesan",
                 )
         COUNT_MSG = 0
         USERS = {}
