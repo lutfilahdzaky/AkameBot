@@ -46,16 +46,16 @@ async def add_new_filter(new_handler):
         await new_handler.edit("`Running on Non-SQL mode!`")
         return
     keyword = new_handler.pattern_match.group(1)
-    string = new_handler.text.partition(keyword)[2]
+    string = new_handler.text.partition(keyword)[10]
     msg = await new_handler.get_reply_message()
     msg_id = None
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await new_handler.client.send_message(
                 BOTLOG_CHATID, f"#FILTER\
-            \nCHAT ID: {new_handler.chat_id}\
-            \nTRIGGER: {keyword}\
-            \n\nThe following message is saved as the filter's reply data for the chat, please do NOT delete it !!"
+            \nID Grup: {new_handler.chat_id}\
+            \nKata Kunci: {keyword}\
+            \n\nJangan Dihapus Karena Filtermu Akan Hilang"
             )
             msg_o = await new_handler.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -71,7 +71,7 @@ async def add_new_filter(new_handler):
     elif new_handler.reply_to_msg_id and not string:
         rep_msg = await new_handler.get_reply_message()
         string = rep_msg.text
-    success = "`Filter` **{}** `{} successfully`"
+    success = "`Filter` **{}** `{} Berhasil Ditambahkan`"
     if add_filter(str(new_handler.chat_id), keyword, string, msg_id) is True:
         await new_handler.edit(success.format(keyword, 'added'))
     else:
