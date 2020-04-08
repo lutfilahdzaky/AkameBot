@@ -79,8 +79,8 @@ async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
         "Join Ke Channel Saya @NotFakeSquadChannel"
-        "\nButuh Akun Untuk Ngecheat? Join @NFS_AkunStore "
-        "Not Fake Squad")
+        "\nButuh Akun Untuk Ngecheat? \nJoin @NFS_AkunStore "
+        "\nNot Fake Squad")
 
 
 @register(outgoing=True, pattern="^.support$")
