@@ -24,17 +24,17 @@ async def _(event):
     if reply_message.sender.bot:
        await event.edit("Balas Ke Pesan Pengguna")
        return
-    await event.edit("`Processing`")
+    await event.edit("Memproses....")
     async with bot.conversation(chat) as conv:
           try:     
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=461843263))
               await bot.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("`Please unblock @sangmatainfo_bot and try again`")
+              await event.reply("Tolong Unblock @sangmatainfo_bot Dan Coba Lagi")
               return
           if response.text.startswith("Forward"):
-             await event.edit("`Akun Disembunyikan Oleh Pengguna Tidak Bisa Meneruskan Pesan!`")
+             await event.edit("Akun Disembunyikan Oleh Pengguna Tidak Bisa Meneruskan Pesan")
           else: 
              await event.edit(f"{response.message.message}")
 
