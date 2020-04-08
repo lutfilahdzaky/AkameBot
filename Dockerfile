@@ -41,9 +41,9 @@ RUN apk add --no-cache=true --update \
     pv \
     jq \
     wget \
-    python \
+    #python \
     #python-dev \
-    #python3 \
+    python3 \
     python3-dev \
     readline-dev \
     sqlite \
