@@ -10,8 +10,7 @@ RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/r
 # Installing Packages
 #
 RUN apk add --no-cache=true --update \
-    coreutils \
-    bash \
+        bash \
     build-base \
     bzip2-dev \
     curl \
@@ -41,8 +40,8 @@ RUN apk add --no-cache=true --update \
     pv \
     jq \
     wget \
-    #python \
-    #python-dev \
+    python \
+    python-dev \
     python3 \
     python3-dev \
     readline-dev \
@@ -53,48 +52,10 @@ RUN apk add --no-cache=true --update \
     chromium \
     chromium-chromedriver \
     zlib-dev \
-    jpeg \
-    #
-    build-base \
-    bzip2-dev \
-    curl \
-    coreutils \
-    figlet \
-    gcc \
-    g++ \
-    git \
-    aria2 \
-    util-linux \
-    libevent \
-    libjpeg-turbo-dev \
-    chromium \
-    chromium-chromedriver \
-    jpeg-dev \
-    libc-dev \
-    libffi-dev \
-    libpq \
-    libwebp-dev \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    musl-dev \
-    neofetch \
-    openssl-dev \
-    postgresql-client \
-    postgresql-dev \
-    pv \
-    jq \
-    wget \
-    python3-dev \
-    readline-dev \
-    ffmpeg \
-    sqlite-dev \
-    sudo \
-    zlib-dev
+    jpeg 
+    
+  
 
-
-
-RUN curl https://cli-assets.heroku.com/install.sh
 
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
@@ -103,14 +64,11 @@ RUN python3 -m ensurepip \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
 
-
-
-
 #
 # Clone repo and prepare working directory
 #
 RUN git clone -b sql-extended https://github.com/RizkyNFS/AkameBot /root/userbot
-RUN mkdir /root/userbot/.bin
+RUN mkdir /root/userbot/bin/
 WORKDIR /root/userbot/
 
 #
@@ -123,5 +81,3 @@ COPY ./sample_config.env ./userbot.session* ./config.env* /root/userbot/
 #
 RUN pip3 install -r requirements.txt
 CMD ["python3","-m","userbot"]
-
-
