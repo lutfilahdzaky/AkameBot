@@ -30,7 +30,7 @@ async def fastpurger(purg):
                 await purg.client.delete_messages(chat, msgs)
                 msgs = []
     else:
-        await purg.edit("`I need a mesasge to start purging from.`")
+        await purg.edit("Tentukan Pesan Mana Yang Mulai Dihapus")
         return
 
     if msgs:
@@ -42,7 +42,7 @@ async def fastpurger(purg):
     if BOTLOG:
         await purg.client.send_message(
             BOTLOG_CHATID,
-            "Purge of " + str(count) + " messages done successfully.")
+            "Purge Dari " + str(count) + " Pesan Telah Berhasil")
     await sleep(2)
     await done.delete()
 
@@ -63,7 +63,7 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Purge complete!` Purged " + str(count) + " messages.",
+        "Purge Selesai! Jumlah " + str(count) + " Pesan",
     )
     if BOTLOG:
         await delme.client.send_message(
@@ -84,11 +84,11 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Deletion of message was successful")
+                    BOTLOG_CHATID, "Hapus Pesan Berhas")
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message")
+                    BOTLOG_CHATID, "Saya Tidak Bisa Menghapus Pesan Tersebut")
 
 
 @register(outgoing=True, pattern="^.edit")
@@ -107,7 +107,7 @@ async def editer(edit):
         i = i + 1
     if BOTLOG:
         await edit.client.send_message(BOTLOG_CHATID,
-                                       "Edit query was executed successfully")
+                                       "Edit Pesan Berhasil Dilakukan")
 
 
 @register(outgoing=True, pattern="^.sd")
