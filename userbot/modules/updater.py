@@ -47,7 +47,7 @@ async def update_requirements():
 @register(outgoing=True, pattern="^\.update(?: |$)(.*)")
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
-    await ups.edit("`Checking for updates, please wait....`")
+    await ups.edit("Sedang Memeriksa Pembaruan, Silahkan Tunggu")
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
