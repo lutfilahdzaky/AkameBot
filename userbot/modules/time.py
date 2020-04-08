@@ -51,7 +51,7 @@ async def time_func(tdata):
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
 
-    t_form = "%H:%M"
+    t_form = "%H:%M:%S"
     c_name = None
 
     if len(con) > 4:
@@ -65,11 +65,11 @@ async def time_func(tdata):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await tdata.edit(f"`It's`  **{dt.now().strftime(t_form)}**  `here.`")
+        await tdata.edit(f"`Sekarang`  **{dt.now().strftime(t_form)}**  `Disini`")
         return
 
     if not timezones:
-        await tdata.edit("`Invaild country.`")
+        await tdata.edit("`Negara Tidak Valid`")
         return
 
     if len(timezones) == 1:
@@ -95,11 +95,11 @@ async def time_func(tdata):
 
     if c_name != COUNTRY:
         await tdata.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"`Sekarang`  **{dtnow}**  `Di {c_name}({time_zone} timezone)`")
         return
 
     elif COUNTRY:
-        await tdata.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
+        await tdata.edit(f"`Sekarang`  **{dtnow}**  `Disini, Di {COUNTRY}"
                          f"({time_zone} timezone).`")
         return
 
@@ -128,11 +128,11 @@ async def date_func(dat):
         tz_num = TZ_NUMBER
         timezones = await get_tz(COUNTRY)
     else:
-        await dat.edit(f"`It's`  **{dt.now().strftime(d_form)}**  `here.`")
+        await dat.edit(f"`Sekarang`  **{dt.now().strftime(d_form)}**  `Disini`")
         return
 
     if not timezones:
-        await dat.edit("`Invaild country.`")
+        await dat.edit("`Negara Tidak Valid`")
         return
 
     if len(timezones) == 1:
@@ -142,14 +142,14 @@ async def date_func(dat):
             tz_num = int(tz_num)
             time_zone = timezones[tz_num - 1]
         else:
-            return_str = f"`{c_name} has multiple timezones:`\n"
+            return_str = f"`{c_name} Mempunyai Beberapa Zona Waktu:`\n"
 
             for i, item in enumerate(timezones):
                 return_str += f"`{i+1}. {item}`\n"
 
-            return_str += "\n`Choose one by typing the number "
+            return_str += "\n`Pilih Dengan Nomor "
             return_str += "in the command.`\n"
-            return_str += f"Example: .date {c_name} 2"
+            return_str += f"Contoh: .date {c_name} 2"
 
             await dat.edit(return_str)
             return
@@ -158,11 +158,11 @@ async def date_func(dat):
 
     if c_name != COUNTRY:
         await dat.edit(
-            f"`It's`  **{dtnow}**  `in {c_name}({time_zone} timezone).`")
+            f"`Sekarang`  **{dtnow}**  `Di {c_name}({time_zone} timezone)`")
         return
 
     elif COUNTRY:
-        await dat.edit(f"`It's`  **{dtnow}**  `here, in {COUNTRY}"
+        await dat.edit(f"`Sekarang`  **{dtnow}**  `Disini, in {COUNTRY}"
                        f"({time_zone} timezone).`")
         return
 
