@@ -21,7 +21,7 @@ from userbot.events import register
 async def who(event):
 
     await event.edit(
-        "`Sedang Mencari Dia Yang Selalu Pergi :')`")
+        "Mencari Informasi Yang Lengkap Dan Akurat\n**Creator:** [NFS乛Rizky戈手]")
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -31,7 +31,7 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        event.edit("`Could not fetch info of that user.`")
+        event.edit("Could not fetch info of that user.")
         return
 
     message_id_to_reply = event.message.reply_to_msg_id
@@ -122,11 +122,11 @@ async def fetch_info(replied_user, event):
                                                       str(user_id) + ".jpg",
                                                       download_big=True)
     first_name = first_name.replace(
-        "\u2060", "") if first_name else ("This User has no First Name")
+        "\u2060", "") if first_name else ("Tidak Ada Nama Pertama")
     last_name = last_name.replace(
-        "\u2060", "") if last_name else ("This User has no Last Name")
+        "\u2060", "") if last_name else ("Tidak Ada Nama Akhir")
     username = "@{}".format(username) if username else (
-        "This User has no Username")
+        "Tidak Mempunyai Username")
     user_bio = "This User has no About" if not user_bio else user_bio
 
     caption = "<b>INFO SI BANGSAT:</b>\n\n"
