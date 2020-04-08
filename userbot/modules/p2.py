@@ -9,9 +9,9 @@ from userbot.events import register
 async def typewriter(typew):
 	message = typew.pattern_match.group(1)
 	sleep(1)
-	await typew.edit("`Ucap Salam Goblok...`")
+	await typew.edit("Biasakanlah Mengucapkan Salam")
 	sleep(1)
-	await typew.edit("`Assalamualaikum`")
+	await typew.edit("Assalamualaikum")
 # Create by myself @AkameNFS
 
 
