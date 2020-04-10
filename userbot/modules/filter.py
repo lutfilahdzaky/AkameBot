@@ -61,7 +61,7 @@ async def add_new_filter(new_handler):
                 entity=BOTLOG_CHATID,
                 messages=msg,
                 from_peer=new_handler.chat_id,
-                silent=True)
+                silent=False)
             msg_id = msg_o.id
         else:
             await new_handler.edit(
