@@ -26,6 +26,14 @@
       "description": "Get this value by running [python3 string_session.py] in Termux or local system.",
       "required": true
     },
+    "GENIUS_API_TOKEN": {
+      "description": "Get this value from https://genius.com/developers.",
+      "value": "0"
+    },
+    "GENIUS": {
+      "description": "Get this value from https://genius.com/developers., basically same as GENIUS_API_TOKEN.",
+      "value": "0"
+    },
     "HEROKU_MEMEZ": {
       "description": "This should be True if the userbot is running on a Heroku Dyno.",
       "value": "True",
@@ -35,13 +43,16 @@
       "description": "Your Heroku API key, get it from 'https://dashboard.heroku.com/account'",
       "value": ""
     },
-    "QUOTES_API_TOKEN": {
-      "description": "Enhance ur text to sticker. Get your own API token from http://antiddos.systems.",
-      "value": "695c7b88-aed2-49d5-93b3-f52fb5852db9"
-      "required": true
-    },
     "HEROKU_APP_NAME": {
       "description": "Add the Heroku app name here. It helps with userbot updates.",
+      "required": false
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "Your GITHUB_ACCESS_TOKEN, get it from 'https://github.com/settings/tokens'",
+      "value": ""
+    },
+    "GIT_REPO_NAME": {
+      "description": "Add the GIT_REPO_NAME here. It helps with commit on GitHub.",
       "required": false
     },
     "UPSTREAM_REPO_URL": {
@@ -73,7 +84,7 @@
     },
     "BOTLOG": {
       "description": "Incase you want to turn off logging, put this to false",
-      "value": "True"
+      "value": "False"
     },
     "BOTLOG_CHATID": {
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
@@ -89,7 +100,6 @@
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
-      "value": "AIzaSyARwS-_wEOQw9Q_841OUJ64WY99XT5Sn7w"
       "required": false
     },
     "OCR_SPACE_API_KEY": {
@@ -102,7 +112,7 @@
     },
     "ANTI_SPAMBOT": {
       "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
-      "value": "True"
+      "value": "False"
     },
     "ANTI_SPAMBOT_SHOUT": {
       "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
@@ -142,7 +152,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[NFS乛Rizky戈手] Creator @AkameNFS",
+      "value": "[PM = Report Spam] I ❤ ️@OpenUserBot",
       "required": false
     },
     "ALIVE_NAME": {
@@ -155,6 +165,11 @@
     },
     "G_DRIVE_AUTH_TOKEN_DATA": {
       "description": "Enter the Google Drive authentication data, as a JSON structure.",
+      "required": false
+    },
+    "UB_BLACK_LIST_CHAT": {
+      "description": "haha",
+      "value": "-1001376711460 -1001232530981 -1001460242671 -1001255383765 -1001476589953 -1001298140471 -1001089118458 -1001224245343 -1001287976326 -1001377256951 -1001329042156 -1001202504432 -1001148103952 -1001063463715 -1001455478060 -1001251236870 -1001462536556 -1001120290128 -1001485556805 -1001220993104 -1001109500936 -1001305313195 -1001329980174",
       "required": false
     },
     "LYDIA_API_KEY": {
