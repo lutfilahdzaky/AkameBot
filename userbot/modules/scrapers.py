@@ -128,7 +128,7 @@ async def carbon_api(e):
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("Lagi Proses...")
+    await event.edit("Processing...")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -207,14 +207,14 @@ async def gsearch(q_event):
             msg += f"[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await q_event.edit("**Hasil Pencarian:**\n`" + match + "`\n\n**Hasil:**\n" +
+    await q_event.edit("**Search Query:**\n`" + match + "`\n\n**Results:**\n" +
                        msg,
                        link_preview=False)
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Mencari Kata Google `" + match + "` Telah Berhasil Dieksekusi",
+            "Google Search query `" + match + "` was executed successfully",
         )
 
 
@@ -244,10 +244,10 @@ async def wiki(wiki_q):
         if os.path.exists("output.txt"):
             os.remove("output.txt")
         return
-    await wiki_q.edit("**Pencarian:**\n`" + match + "`\n\n**Hasil:**\n" + result)
+    await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
     if BOTLOG:
         await wiki_q.client.send_message(
-            BOTLOG_CHATID, f"Wiki Kata `{match}` Telah Berhasil Dieksekusi")
+            BOTLOG_CHATID, f"Wiki query `{match}` was executed successfully")
 
 
 @register(outgoing=True, pattern="^.ud (.*)")
@@ -304,13 +304,13 @@ async def text_to_speech(query):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await query.edit("Syntax Gagal")
+        await query.edit("Invalid Syntax. Module stopping.")
         return
     text = text.strip()
     lan = lan.strip()
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
-    required_file_name = TEMP_DOWNLOAD_DIRECTORY + "Dari"
+    required_file_name = TEMP_DOWNLOAD_DIRECTORY + "voice.ogg"
     try:
         #https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
         tts = gTTS(text, lang=lan)
@@ -327,7 +327,7 @@ async def text_to_speech(query):
              "100k",
              "-vbr",
              "on",
-             required_file_name + "Google"
+             required_file_name + ".opus"
         ]
         try:
             t_response = subprocess.check_output(command_to_execute, stderr=subprocess.STDOUT)
@@ -336,7 +336,7 @@ async def text_to_speech(query):
             # continue sending required_file_name
         else:
             os.remove(required_file_name)
-            required_file_name = required_file_name + "Google"
+            required_file_name = required_file_name + ".opus"
         end = datetime.now()
         ms = (end - start).seconds
         await bot.send_file(
@@ -450,24 +450,24 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        await trans.edit("`Beri Teks Atau Reply Ke Sebuah Pesan!`")
+        await trans.edit("`Give a text or reply to a message to translate!`")
         return
 
     try:
         reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
-        await trans.edit("Bahasa Invalid")
+        await trans.edit("Invalid destination language.")
         return
 
     source_lan = LANGUAGES[f'{reply_text.src.lower()}']
     transl_lan = LANGUAGES[f'{reply_text.dest.lower()}']
-    reply_text = f"Dari **{source_lan.title()}**\nKe **{transl_lan.title()}:**\n\n{reply_text.text}"
+    reply_text = f"From **{source_lan.title()}**\nTo **{transl_lan.title()}:**\n\n{reply_text.text}"
 
     await trans.edit(reply_text)
     if BOTLOG:
         await trans.client.send_message(
             BOTLOG_CHATID,
-            f"Bahasa Diterjemahkan {source_lan.title()} Ke Bahasa {transl_lan.title()} ",
+            f"Translated some {source_lan.title()} stuff to {transl_lan.title()} just now.",
         )
 
 
@@ -484,7 +484,7 @@ async def lang(value):
             LANG = LANGUAGES[arg]
         else:
             await value.edit(
-                f"`Kode Negara Invalid !!`\n`Kode Negara Yang Tersedia Untuk TRT`:\n\n`{LANGUAGES}`"
+                f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
             )
             return
     elif util == "tts":
