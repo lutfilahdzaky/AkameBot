@@ -3,6 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
+# thanks to the owner of X-tra-Telegram for tts fix
+#
 """ Userbot module containing various scrapers. """
 
 import os
@@ -15,16 +17,16 @@ from time import sleep
 from html import unescape
 from re import findall
 from selenium import webdriver
-from urllib.parse import quote_plus
-from urllib.error import HTTPError
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
+from urllib.parse import quote_plus
+from urllib.error import HTTPError
+from telethon import events
 from wikipedia import summary
 from wikipedia.exceptions import DisambiguationError, PageError
 from urbandict import define
 from requests import get
 from search_engine_parser import GoogleSearch
-from google_images_download import google_images_download
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googletrans import LANGUAGES, Translator
@@ -37,22 +39,25 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
 from asyncio import sleep
-from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN
+from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, YOUTUBE_API_KEY, CHROME_DRIVER, GOOGLE_CHROME_BIN, bot
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.modules.upload_download import progress, humanbytes, time_formatter
+from userbot.google_images_download import googleimagesdownload
+import subprocess
+from datetime import datetime
+
 
 CARBONLANG = "auto"
-TTS_LANG = "id"
-TRT_LANG = "id"
-
+TTS_LANG = "en"
+TRT_LANG = "en"
+TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
 @register(outgoing=True, pattern="^.crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
-    await prog.edit(f"Bahasa untuk carbon.now.sh set ke {CARBONLANG}")
-
+    await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
 @register(outgoing=True, pattern="^.carbon")
 async def carbon_api(e):
@@ -67,9 +72,9 @@ async def carbon_api(e):
     elif textx:
         pcode = str(textx.message)  # Importing message to module
     code = quote_plus(pcode)  # Converting to urlencoded
-    await e.edit("`Proses..\n25%`")
-    if os.path.isfile("./carbon.png"):
-        os.remove("./carbon.png")
+    await e.edit("`Processing..\n25%`")
+    if os.path.isfile("/root/userbot/.bin/carbon.png"):
+        os.remove("/root/userbot/.bin/carbon.png")
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -78,13 +83,13 @@ async def carbon_api(e):
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-gpu")
-    prefs = {'download.default_directory': './'}
+    prefs = {'download.default_directory': '/root/userbot/.bin'}
     chrome_options.add_experimental_option('prefs', prefs)
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER,
                               options=chrome_options)
     driver.get(url)
-    await e.edit("`Proses..\n50%`")
-    download_path = './'
+    await e.edit("`Processing..\n50%`")
+    download_path = '/root/userbot/.bin'
     driver.command_executor._commands["send_command"] = (
         "POST", '/session/$sessionId/chromium/send_command')
     params = {
@@ -96,15 +101,15 @@ async def carbon_api(e):
     }
     command_result = driver.execute("send_command", params)
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
-    driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
-    driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`Proses..\n75%`")
+   # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
+   # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
+    await e.edit("`Processing..\n75%`")
     # Waiting for downloading
-    while not os.path.isfile("./carbon.png"):
+    while not os.path.isfile("/root/userbot/.bin/carbon.png"):
         await sleep(0.5)
-    await e.edit("`Proses..\n100%`")
-    file = './carbon.png'
-    await e.edit("`Mengupload..`")
+    await e.edit("`Processing..\n100%`")
+    file = '/root/userbot/.bin/carbon.png'
+    await e.edit("`Uploading..`")
     await e.client.send_file(
         e.chat_id,
         file,
@@ -114,16 +119,16 @@ async def carbon_api(e):
         reply_to=e.message.reply_to_msg_id,
     )
 
-    os.remove('./carbon.png')
+    os.remove('/root/userbot/.bin/carbon.png')
     driver.quit()
     # Removing carbon.png after uploading
     await e.delete()  # Deleting msg
-
-
+    
+    
 @register(outgoing=True, pattern="^.img (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
-    await event.edit("Memproses...")
+    await event.edit("Processing...")
     query = event.pattern_match.group(1)
     lim = findall(r"lim=\d+", query)
     try:
@@ -131,8 +136,8 @@ async def img_sampler(event):
         lim = lim.replace("lim=", "")
         query = query.replace("lim=" + lim[0], "")
     except IndexError:
-        lim = 3
-    response = google_images_download.googleimagesdownload()
+        lim = 5
+    response = googleimagesdownload()
 
     # creating list of arguments
     arguments = {
@@ -202,14 +207,14 @@ async def gsearch(q_event):
             msg += f"[{title}]({link})\n`{desc}`\n\n"
         except IndexError:
             break
-    await q_event.edit("**Kata Kunci:**\n`" + match + "`\n\n**Hasil:**\n" +
+    await q_event.edit("**Search Query:**\n`" + match + "`\n\n**Results:**\n" +
                        msg,
                        link_preview=False)
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Hasil Search Google `" + match + "` Telah Berhasil Dijalankan",
+            "Google Search query `" + match + "` was executed successfully",
         )
 
 
@@ -287,48 +292,67 @@ async def urban_dict(ud_e):
 
 @register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
 async def text_to_speech(query):
-    """ For .tts command, a wrapper for Google Text-to-Speech. """
-    textx = await query.get_reply_message()
-    message = query.pattern_match.group(1)
-    if message:
-        pass
-    elif textx:
-        message = textx.text
+#async def _(event):
+    if query.fwd_from:
+        return
+    input_str = query.pattern_match.group(1)
+    start = datetime.now()
+    if query.reply_to_msg_id:
+        previous_message = await query.get_reply_message()
+        text = previous_message.message
+        lan = input_str
+    elif "|" in input_str:
+        lan, text = input_str.split("|")
     else:
-        await query.edit(
-            "`Give a text or reply to a message for Text-to-Speech!`")
+        await query.edit("Invalid Syntax. Module stopping.")
         return
-
+    text = text.strip()
+    lan = lan.strip()
+    if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
+        os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
+    required_file_name = TEMP_DOWNLOAD_DIRECTORY + "voice.ogg"
     try:
-        gTTS(message, lang=TTS_LANG)
-    except AssertionError:
-        await query.edit(
-            'The text is empty.\n'
-            'Nothing left to speak after pre-precessing, tokenizing and cleaning.'
+        #https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
+        tts = gTTS(text, lang=lan)
+        tts.save(required_file_name)
+        command_to_execute = [
+            "ffmpeg",
+            "-i",
+             required_file_name,
+             "-map",
+             "0:a",
+             "-codec:a",
+             "libopus",
+             "-b:a",
+             "100k",
+             "-vbr",
+             "on",
+             required_file_name + ".opus"
+        ]
+        try:
+            t_response = subprocess.check_output(command_to_execute, stderr=subprocess.STDOUT)
+        except (subprocess.CalledProcessError, NameError, FileNotFoundError) as exc:
+            await query.edit(str(exc))
+            # continue sending required_file_name
+        else:
+            os.remove(required_file_name)
+            required_file_name = required_file_name + ".opus"
+        end = datetime.now()
+        ms = (end - start).seconds
+        await bot.send_file(
+            query.chat_id,
+            required_file_name,
+            # caption="Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms),
+            reply_to=query.message.reply_to_msg_id,
+            allow_cache=False,
+            voice_note=True
         )
-        return
-    except ValueError:
-        await query.edit('Language is not supported.')
-        return
-    except RuntimeError:
-        await query.edit('Error loading the languages dictionary.')
-        return
-    tts = gTTS(message, lang=TTS_LANG)
-    tts.save("k.mp3")
-    with open("k.mp3", "rb") as audio:
-        linelist = list(audio)
-        linecount = len(linelist)
-    if linecount == 1:
-        tts = gTTS(message, lang=TTS_LANG)
-        tts.save("k.mp3")
-    with open("k.mp3", "r"):
-        await query.client.send_file(query.chat_id, "k.mp3", voice_note=True)
-        os.remove("k.mp3")
-        if BOTLOG:
-            await query.client.send_message(
-                BOTLOG_CHATID, "Text to Speech executed successfully !")
+        os.remove(required_file_name)
+        await query.edit("Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms))
+        await asyncio.sleep(5)
         await query.delete()
-
+    except Exception as e:
+        await query.edit(str(e))
 
 
 # kanged from Blank-x ;---;
@@ -426,13 +450,13 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        await trans.edit("`Berikan Text Atau Balas Pesan Untuk Menerjemahkan!`")
+        await trans.edit("`Give a text or reply to a message to translate!`")
         return
 
     try:
         reply_text = translator.translate(deEmojify(message), dest=TRT_LANG)
     except ValueError:
-        await trans.edit("Bahasa Tidak Valid.")
+        await trans.edit("Invalid destination language.")
         return
 
     source_lan = LANGUAGES[f'{reply_text.src.lower()}']
@@ -460,7 +484,7 @@ async def lang(value):
             LANG = LANGUAGES[arg]
         else:
             await value.edit(
-                f"`Kode Bahasa Tidak Dikenal !!`\n`Kode Bahasa TRT`:\n\n`{LANGUAGES}`"
+                f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
             )
             return
     elif util == "tts":
@@ -479,7 +503,7 @@ async def lang(value):
     if BOTLOG:
         await value.client.send_message(
             BOTLOG_CHATID,
-            f"`Bahasa Untuk {scraper} Diganti ke {LANG.title()}.`")
+            f"`Language for {scraper} changed to {LANG.title()}.`")
 
 
 @register(outgoing=True, pattern="^.yt (.*)")
@@ -490,11 +514,11 @@ async def yt_search(video_q):
 
     if not YOUTUBE_API_KEY:
         await video_q.edit(
-            "`Error: YouTube API Tidak Ditemukan! Tambahkan Ke config.env.`"
+            "`Error: YouTube API key missing! Add it to environment vars or config.env.`"
         )
         return
 
-    await video_q.edit("```Memproses...```")
+    await video_q.edit("```Processing...```")
 
     full_response = await youtube_search(query)
     videos_json = full_response[1]
@@ -504,7 +528,7 @@ async def yt_search(video_q):
         link = f"https://youtu.be/{video['id']['videoId']}"
         result += f"{title}\n{link}\n\n"
 
-    reply_text = f"**Kata Kunci:**\n`{query}`\n\n**Hasil:**\n\n{result}"
+    reply_text = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n{result}"
 
     await video_q.edit(reply_text)
 
@@ -551,7 +575,7 @@ async def download_video(v_url):
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`Siap Untuk Didownload...`")
+    await v_url.edit("`Preparing to download...`")
 
     if type == "audio":
         opts = {
@@ -613,14 +637,14 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Mendapatkan data, Sabar Ya..`")
+        await v_url.edit("`Fetching data, please wait..`")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         await v_url.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await v_url.edit("`Konten Yang Didownload Sangat Pendek.`")
+        await v_url.edit("`The download content was too short.`")
         return
     except GeoRestrictedError:
         await v_url.edit(
@@ -628,26 +652,26 @@ async def download_video(v_url):
         )
         return
     except MaxDownloadsReached:
-        await v_url.edit("`Max-downloads Telah Tercapai.`")
+        await v_url.edit("`Max-downloads limit has been reached.`")
         return
     except PostProcessingError:
-        await v_url.edit("`Sebuah Kesalahan Saat Memproses.`")
+        await v_url.edit("`There was an error during post processing.`")
         return
     except UnavailableVideoError:
-        await v_url.edit("`Media Bukan Format Yang Didukung.`")
+        await v_url.edit("`Media is not available in the requested format.`")
         return
     except XAttrMetadataError as XAME:
         await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await v_url.edit("`Ada Sebuah Kesalahan.`")
+        await v_url.edit("`There was an error during info extraction.`")
         return
     except Exception as e:
         await v_url.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Bersiap Mengupload Lagu:`\
+        await v_url.edit(f"`Preparing to upload song:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -661,12 +685,12 @@ async def download_video(v_url):
             ],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Mengupload..",
+                progress(d, t, v_url, c_time, "Uploading..",
                          f"{rip_data['title']}.mp3")))
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Bersiap Mengupload Video:`\
+        await v_url.edit(f"`Preparing to upload video:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -676,7 +700,7 @@ async def download_video(v_url):
             caption=rip_data['title'],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Mengupload..",
+                progress(d, t, v_url, c_time, "Uploading..",
                          f"{rip_data['title']}.mp4")))
         os.remove(f"{rip_data['id']}.mp4")
         await v_url.delete()
