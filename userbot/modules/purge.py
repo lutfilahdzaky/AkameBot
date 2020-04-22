@@ -68,7 +68,7 @@ async def purgeme(delme):
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "Purge of " + str(count) + " messages done successfully.")
+            "Total " + str(count) + " Pesan Telah Berhasil Dihapus")
     await sleep(2)
     i = 1
     await smsg.delete()
@@ -84,7 +84,7 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Hapus Pesan Berhas")
+                    BOTLOG_CHATID, "Hapus Pesan Berhasil")
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
