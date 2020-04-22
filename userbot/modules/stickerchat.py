@@ -54,7 +54,7 @@ if 1 == 1:
         if QUOTES_API_TOKEN is None:
             await message.edit("Provide QUOTES_API_TOKEN from http://antiddos.systems/login in config.py or heroku vars first!!")
             return
-        await message.edit("`Processing...`")
+        await message.edit("Mengubah Menjadi Stiker...")
         args = message.raw_text.split(" ")[1:]
         if args == []:
             args = ["default"]
