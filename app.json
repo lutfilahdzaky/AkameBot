@@ -73,6 +73,11 @@
       "value": "/usr/bin/chromedriver",
       "required": false
     },
+    "QUOTES_API_TOKEN": {
+      "description": "Enhance ur text to sticker. Get your own API token from http://antiddos.systems.",
+      "value": "695c7b88-aed2-49d5-93b3-f52fb5852db9",
+      "required": false
+    },
     "GOOGLE_CHROME_BIN": {
       "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
       "value": "/usr/bin/chromium-browser",
@@ -80,6 +85,7 @@
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
+      "value": "5edc4189cd8c764e21332eb0f42e7cc1",
       "required": false
     },
     "BOTLOG": {
@@ -88,7 +94,7 @@
     },
     "BOTLOG_CHATID": {
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
-      "value": "Ganti Dengan ID Grup"
+      "value": "-1001450059942"
     },
     "CONSOLE_LOGGER_VERBOSE": {
       "description": "If you need verbosity on the console logging",
@@ -100,6 +106,7 @@
     },
     "YOUTUBE_API_KEY": {
       "description": "YouTube Data API Key for .yt command. Get from https://console.cloud.google.com",
+      "value": "AIzaSyARwS-_wEOQw9Q_841OUJ64WY99XT5Sn7w",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
@@ -108,6 +115,7 @@
     },
     "REM_BG_API_KEY": {
       "description": "API Key for .rbg command. Get from https://www.remove.bg/api",
+      "value": "rMRQg4AVpaoEcugGf2xwRUBi",
       "required": false
     },
     "ANTI_SPAMBOT": {
@@ -152,7 +160,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Default profile bio.",
-      "value": "[PM = Report Spam] I ❤ ️@OpenUserBot",
+      "value": "Crator NFS乛Rizky戈手",
       "required": false
     },
     "ALIVE_NAME": {
