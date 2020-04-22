@@ -29,7 +29,7 @@ for module_name in ALL_MODULES:
 LOGS.info("Kamu Menggunakan AkameBot [13.1.1]")
 
 LOGS.info(
-    "🛡️⚜️🔰🥇Selamat! Bot Kamu Berhasil Diaktifkan🥇🔰⚜️🛡️)
+    "🛡️⚜️🔰🥇Selamat! Bot Kamu Berhasil Diaktifkan🥇🔰⚜️🛡️")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
