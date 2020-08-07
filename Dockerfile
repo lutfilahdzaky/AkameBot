@@ -1,121 +1,17 @@
-# We're using Alpine Edge
-FROM alpine:edge
+FROM movecrew/one4ubot:alpine-latest
+
+RUN mkdir /One4uBot && chmod 777 /One4uBot
+ENV PATH="/One4uBot/bin:$PATH"
+WORKDIR /One4uBot
+
+RUN git clone https://github.com/RizkyawanNFS/ShinoaBot -b sql-extended /One4uBot
 
 #
-# We have to uncomment Community repo for some packages
+# Copies session and config(if it exists)
 #
-RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/repositories
+COPY ./sample_config.env ./userbot.session* ./config.env* /One4uBot/
 
 #
-# Installing Packages
+# Finalization
 #
-RUN apk add --no-cache=true --update \
-    coreutils \
-    bash \
-    build-base \
-    bzip2-dev \
-    curl \
-    figlet \
-    gcc \
-    g++ \
-    git \
-    sudo \
-    aria2 \
-    util-linux \
-    libevent \
-    jpeg-dev \
-    libffi-dev \
-    libpq \
-    libwebp-dev \
-    libxml2 \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    musl \
-    neofetch \
-    openssl-dev \
-    postgresql \
-    postgresql-client \
-    postgresql-dev \
-    openssl \
-    pv \
-    jq \
-    wget \
-    #python \
-    #python-dev \
-    python3 \
-    python3-dev \
-    readline-dev \
-    sqlite \
-    ffmpeg \
-    sqlite-dev \
-    sudo \
-    chromium \
-    chromium-chromedriver \
-    zlib-dev \
-    jpeg \
-    #
-    build-base \
-    bzip2-dev \
-    curl \
-    coreutils \
-    figlet \
-    gcc \
-    g++ \
-    git \
-    aria2 \
-    util-linux \
-    libevent \
-    libjpeg-turbo-dev \
-    chromium \
-    chromium-chromedriver \
-    jpeg-dev \
-    libc-dev \
-    libffi-dev \
-    libpq \
-    libwebp-dev \
-    libxml2-dev \
-    libxslt-dev \
-    linux-headers \
-    musl-dev \
-    neofetch \
-    openssl-dev \
-    postgresql-client \
-    postgresql-dev \
-    pv \
-    jq \
-    wget \
-    python3-dev \
-    readline-dev \
-    ffmpeg \
-    sqlite-dev \
-    sudo \
-    zlib-dev
-    
-  
-
-
-RUN python3 -m ensurepip \
-    && pip3 install --upgrade pip setuptools \
-    && rm -r /usr/lib/python*/ensurepip && \
-    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
-    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-    rm -r /root/.cache
-
-#
-# Clone repo and prepare working directory
-#
-RUN git clone -b sql-extended https://github.com/RizkyNFS/AkameBot /root/userbot
-RUN mkdir /root/userbot/bin/
-WORKDIR /root/userbot/
-
-#
-# Copies session and config (if it exists)
-#
-COPY ./sample_config.env ./userbot.session* ./config.env* /root/userbot/
-
-#
-# Install requirements
-#
-RUN pip3 install -r requirements.txt
 CMD ["python3","-m","userbot"]
